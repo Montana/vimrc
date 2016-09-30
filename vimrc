@@ -53,10 +53,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-"----------------------------------------
-" plugins
-"----------------------------------------
-
 " Set up CtrlP mappings
 let g:ctrlp_map="<c-p>"
 let g:ctrlp_cmd="CtrlP"
@@ -73,10 +69,12 @@ let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#virtualenv#enabled=1
 let g:airline#extensions#tabline#fnamemod=':t'
 
-" Remove usages command in jedi-vim
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+
 let g:jedi#usages_command=""
 
-" Other jedi settings for python
 let g:jedi#use_tabs_not_buffers=0
 let g:jedi#popup_on_dot=0
 let g:jedi#show_call_signatures="0"
@@ -84,10 +82,6 @@ let g:pymode_rope=0
 
 " NERDTreeIgnore
 let NERDTreeIgnore=['.*\.pyc$', '^\.git$', '^\.$', '^\.\.$', '^\.sass-cache$', '^__pycache__$']
-
-"----------------------------------------
-" folding
-"----------------------------------------
 
 set foldenable " enable folding
 set foldlevelstart=10 " start at max
@@ -108,10 +102,6 @@ function! NeatFoldText() "{{{2
 endfunction
 set foldtext=NeatFoldText()
 " }}}2
-
-"----------------------------------------
-" functions
-"----------------------------------------
 
 " Function to create folders when writing
 function! s:MkNonExDir(file, buf)
@@ -137,10 +127,6 @@ autocmd FileWritePre    * :call TrimWhiteSpace()
 autocmd FileAppendPre   * :call TrimWhiteSpace()
 autocmd FilterWritePre  * :call TrimWhiteSpace()
 autocmd BufWritePre     * :call TrimWhiteSpace()
-
-"----------------------------------------
-" key mappings
-"----------------------------------------
 
 let mapleader=","
 
