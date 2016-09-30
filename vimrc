@@ -6,6 +6,12 @@ filetype on " filetype detection
 filetype indent on " filetype indentation
 filetype plugin on " filetype plugins
 
+set laststatus=2
+set statusline=\ %{HasPaste()}%<%-15.25(%f%)%m%r%h\ %w\ \ 
+set statusline+=\ \ \ [%{&ff}/%Y] 
+set statusline+=\ \ \ %<%20.30(%{hostname()}:%{CurDir()}%)\ 
+set statusline+=%=%-10.(%l,%c%V%)\ %p%%/%L
+
 autocmd! bufwritepost .vimrc source ~/.vimrc
 
 set hlsearch " highlight search
