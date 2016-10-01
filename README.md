@@ -6,7 +6,6 @@ To install my (Montana Mendy's) `.vimrc` just clone this repository to `.vim` in
 git clone https://github.com/Montana/vimrc.git
 cd vim
 git submodule update --init --recursive
-sh install-vimrc.sh
 ```
 
 I've also added an install script, if you're too lazy to install.
