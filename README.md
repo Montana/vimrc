@@ -10,3 +10,8 @@ sh install-vimrc.sh
 ```
 
 I've also added an install script, if you're too lazy to install.
+
+```sh
+chmod 777
+sh install-vimrc.sh
+```
