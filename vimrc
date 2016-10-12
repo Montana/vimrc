@@ -17,7 +17,7 @@ autocmd! bufwritepost .vimrc source ~/.vimrc
 
 set hlsearch " highlight search
 
-if has("gui_running")	" GUI
+if has("gui_running")
     set background=dark
     set guifont=DejaVuSansMonoForPowerline:h13 " font
     set t_Co=256 " 256 bit color in terminal
